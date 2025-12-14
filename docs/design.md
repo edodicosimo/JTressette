@@ -33,8 +33,10 @@ A deck must be initialized
 Player must be inizialited
 AIPlayer must be initialized
 Each player drae the first Hand (10 cards)
-The order of play must be decided
-Starting player play a card, then each player does 
-The table must be resolved
-Winning player is the first for next turn
-each player draws a card
+TURN:
+- The order of play must be decided
+- Starting player play a card, then each player does 
+- The table must be resolved
+- Winning player is the first for next turn
+- each player draws a card
+WHEN deck is empty and hands are empty game finish

@@ -15,14 +15,17 @@
             
         }
         class Game{
-
+            - numberOfPlayers : int
+            - players : List<Player>
+            - deck : Deck
+            - table : Table
         }
 
         class Hand{
-
+            - cards : List<Card>
         }
         class Table{
-
+            - cards : List<Card>
         }
         abstract Player{
 
@@ -31,7 +34,7 @@
             
         }
         class AIPlayer extends Player{
-            
+
         }
         Game --* Deck
         Game --* Table
