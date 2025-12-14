@@ -24,14 +24,24 @@
         class Table{
 
         }
+        abstract Player{
+
+        }
+        class HumanPlayer extends Player{
+            
+        }
+        class AIPlayer extends Player{
+            
+        }
         Game --* Deck
         Game --* Table
-        Game --* "2..4" Hand
+        Game --* "2..4" Player
+        Player --* Hand
         Deck --o Card
         Table --o Card
         Hand --o Card
-        Card --o Suit
-        Card --o Rank
+        Card --> Suit
+        Card --> Rank
     }
     package controller{
 

@@ -30,3 +30,6 @@ The project follows the **MVC (Model–View–Controller)** architectural patter
 ## Flow of Actions
 The user start a new game selecting the number of players
 A deck must be initialized
+Player must be inizialited
+AIPlayer must be initialized
+Each player drae the first Hand (10 cards)
