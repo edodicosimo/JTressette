@@ -1,0 +1,22 @@
+@startuml tressette{
+    package model{
+        class Card{
+
+        }
+        class Deck{
+
+        }
+        enum Segno{
+
+        }
+        enum Valore{
+            
+        }
+    }
+    package controller{
+
+    }
+    package view{
+
+    }
+}
