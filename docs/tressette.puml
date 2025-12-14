@@ -21,7 +21,9 @@
             - deck : Deck
             - table : Table
             + dealCard(deck: Deck, player: Player) : void
-
+            + askPlayerForCard(player : Player) : Card
+            + addCardToTable(table : Table, card : Card) : void
+            + solveTable()
         }
 
         class Hand{
@@ -33,6 +35,7 @@
         abstract Player{
             - hand : Hand
             + receiveCard(card : Card) : void
+            + playCard() : Card
         }
         class HumanPlayer extends Player{
             

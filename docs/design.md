@@ -36,8 +36,12 @@ The Game deal the first hand to the players
 TURN:
 - The order of play must be decided
     - The order of play maybe be the order of the players list
-- Starting player play a card, then each player does 
-- The table must be resolved
+    - So the deck must be initialized with the list in order
+- game ask first player wich card should he play
+- first player decides
+    - if he is human must wait for the input
+- game add this card to table
+- The table must be resolved by the game
 - Winning player is the first for next turn
 - each player draws a card
 WHEN deck is empty and hands are empty game finish
