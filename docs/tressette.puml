@@ -15,7 +15,14 @@
         enum Rank{
             
         }
+        interface GameRules{
+
+        }
+        class TresetteRules implements GameRules{
+
+        }
         class Game{
+            - rules : GameRules
             - numberOfPlayers : int
             - players : List<Player>
             - deck : Deck
@@ -30,12 +37,13 @@
             - cards : List<Card>
         }
         class Table{
-            - cards : List<Card>
+            - cards : Map<Player,Card>
             + addCard(card : Card)
             + clear() : void
         }
         abstract Player{
             - hand : Hand
+            - pile : List<Card>
             + receiveCard(card : Card) : void
             + playCard() : Card
         }

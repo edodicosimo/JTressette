@@ -25,6 +25,7 @@ The project follows the **MVC (Model–View–Controller)** architectural patter
 
 ## Design patterns
 - **Strategy Pattern** for opponent AI behavior
+- **Strategy Pattern** for game rules
 - **Observer Pattern** for UI updates
 
 ## Flow of Actions
@@ -41,9 +42,16 @@ TURN:
 - first player decides
     - if he is human must wait for the input
 - game add this card to table
+    - table must be a map, so that there is a record of whom played what
 - all player plays
 - The table must be resolved by the game
     - player list order is updated: winning player is the first for next turn
+    - winning player gets the card in his pile
 - game give each player a card in the list order
 - game clear the table
 WHEN deck is empty and hands are empty game finish
+
+- How to keep the score?
+    - each player has a pile with all the cards he won
+    - at endgame the game compute each player score
+- How to manage teams?
