@@ -35,13 +35,15 @@ AIPlayer must be initialized
 The Game deal the first hand to the players
 TURN:
 - The order of play must be decided
-    - The order of play maybe be the order of the players list
+    - The order of play may be the order of the players list
     - So the deck must be initialized with the list in order
 - game ask first player wich card should he play
 - first player decides
     - if he is human must wait for the input
 - game add this card to table
+- all player plays
 - The table must be resolved by the game
-- Winning player is the first for next turn
-- each player draws a card
+    - player list order is updated: winning player is the first for next turn
+- game give each player a card in the list order
+- game clear the table
 WHEN deck is empty and hands are empty game finish

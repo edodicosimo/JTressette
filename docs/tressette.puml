@@ -23,7 +23,7 @@
             + dealCard(deck: Deck, player: Player) : void
             + askPlayerForCard(player : Player) : Card
             + addCardToTable(table : Table, card : Card) : void
-            + solveTable()
+            + solveTable(table : Table)
         }
 
         class Hand{
@@ -31,6 +31,8 @@
         }
         class Table{
             - cards : List<Card>
+            + addCard(card : Card)
+            + clear() : void
         }
         abstract Player{
             - hand : Hand
