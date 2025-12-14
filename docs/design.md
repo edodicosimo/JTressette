@@ -1,9 +1,9 @@
 # JTresette
 
-Progetto finale per il corso di Metodologie di Programmazione
+Final project for the **Metodologie di Programmazione** course.
 
-## Architettura
-Il progetto segue il pattern di architettura MVC (model, view, controller).
+## Architecture
+The project follows the **MVC (Model–View–Controller)** architectural pattern.
 
 ## Tech stack
 - Java 25
@@ -11,18 +11,18 @@ Il progetto segue il pattern di architettura MVC (model, view, controller).
 - Maven
 - Git
 
-## Specifiche richieste
-1. Gestione del profilo utente
-    - nickname
-    - avatar, 
-    - partite giocate, vinte e perse, 
-    - livello (potrei fare che ogni tot vittorie si aumenta di livello)
-2. Gestione di una partita completa con un giocatore umano contro 1, 2 o 3 giocatori artificiali
-    - giocatori artificiali
-    - scelta di quanti giocatori per partita
-3. Riproduzione di audio sample (si veda appendice AudioManager.Java)
-4. Animazioni ed effetti speciali (anche se limitati) 
+## Required specifications
+1. **User profile management**
+   - nickname
+   - avatar
+   - played, won, and lost matches
+   - level (I can increase the level every *N* wins)
+2. **Full match management** with a human player against **1, 2, or 3 AI players**
+   - AI opponents
+   - choice of how many players per match
+3. **Audio sample playback** (see Appendix `AudioManager.java`)
+4. **Animations and special effects** (even if limited)
 
-## Design Pattern 
-- Strategy pattern per l'AI degli avversari
-- Observer per l'aggiornamento dell'UI
+## Design patterns
+- **Strategy Pattern** for opponent AI behavior
+- **Observer Pattern** for UI updates
