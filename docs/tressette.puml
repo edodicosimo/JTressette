@@ -7,6 +7,7 @@
         class Deck{
             - cards : List<Card>
             + shuffle() : void
+            + draw() : Card
         }
         enum Suit{
 
@@ -19,6 +20,8 @@
             - players : List<Player>
             - deck : Deck
             - table : Table
+            + dealCard(deck: Deck, player: Player) : void
+
         }
 
         class Hand{
@@ -28,7 +31,8 @@
             - cards : List<Card>
         }
         abstract Player{
-
+            - hand : Hand
+            + receiveCard(card : Card) : void
         }
         class HumanPlayer extends Player{
             
