@@ -1,0 +1,18 @@
+# --- Maven (Build e dipendenze) ---
+# Ignora la cartella di compilazione (IMPORTANTISSIMO)
+target/
+# Ignora i log
+*.log
+
+# --- Java ---
+# Ignora i file compilati se finiscono fuori dalla target
+*.class
+
+# --- VS Code ---
+# Ignora le impostazioni locali dell'editor
+.vscode/
+*.code-workspace
+
+# --- macOS ---
+# Ignora i file di sistema del Mac
+.DS_Store
