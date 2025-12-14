@@ -1,17 +1,37 @@
 @startuml tressette{
     package model{
         class Card{
-
+            - rank : Rank
+            - suit : Suit
         }
         class Deck{
+            - cards : List<Card>
+            + shuffle() : void
+        }
+        enum Suit{
 
         }
-        enum Segno{
-
-        }
-        enum Valore{
+        enum Rank{
             
         }
+        class Game{
+
+        }
+
+        class Hand{
+
+        }
+        class Table{
+
+        }
+        Game --* Deck
+        Game --* Table
+        Game --* "2..4" Hand
+        Deck --o Card
+        Table --o Card
+        Hand --o Card
+        Card --o Suit
+        Card --o Rank
     }
     package controller{
 

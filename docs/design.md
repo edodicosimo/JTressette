@@ -26,3 +26,7 @@ The project follows the **MVC (Model–View–Controller)** architectural patter
 ## Design patterns
 - **Strategy Pattern** for opponent AI behavior
 - **Observer Pattern** for UI updates
+
+## Flow of Actions
+The user start a new game selecting the number of players
+A deck must be initialized
