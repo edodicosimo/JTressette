@@ -18,6 +18,7 @@
         interface GameRules{
             + solveTable(table : Table) : Player
             + computeScore(List<Card>) : int
+            + moveIsLegal(table : Table, cardPlayed : card)
         }
         class TresetteRules implements GameRules{
         }
@@ -29,17 +30,21 @@
             - deck : Deck
             - table : Table
             - currentPlayer : int
+            - currentPhase : Phase
             + dealCard(player: Player) : void
+            + changePhase(phase : Phase) : void
             + askPlayerForCard(player : Player) : Card
-            + addCardToTable(table : Table, card : Card) : void
+            + addCardToTable(card : Card) : void
             + solveTable(table : Table) : void
             + addCardsToPlayerPile(table : Table, player : player) : void
             + updatePlayerOrder(player : Player) : void
             + computeScore(team : Team) : int
+            + computeWiningTeam() : Team
         }
         enum Phase{
             + INITIALIZATION
             + TURN
+            + WAIT_HUMAN_PLAY
             + ENDGAME
         }
         class Hand{
@@ -75,6 +80,7 @@
         Game --* Deck
         Game --* Table
         Game --* "2..4" Player
+        Game --* Phase
         Player --o Team
         Player --* Hand
         AIPlayer --* AiStrategy
