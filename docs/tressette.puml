@@ -25,9 +25,10 @@
             - rules : GameRules
             - numberOfPlayers : int
             - players : List<Player>
-            - teams : Map<Team, List<Player>>
+            - teams : LinkedHashMap<Team, List<Player>>
             - deck : Deck
             - table : Table
+            - currentPlayer : int
             + dealCard(player: Player) : void
             + askPlayerForCard(player : Player) : Card
             + addCardToTable(table : Table, card : Card) : void
@@ -36,7 +37,11 @@
             + updatePlayerOrder(player : Player) : void
             + computeScore(team : Team) : int
         }
-
+        enum Phase{
+            + INITIALIZATION
+            + TURN
+            + ENDGAME
+        }
         class Hand{
             - cards : List<Card>
         }
@@ -60,6 +65,9 @@
             
         }
         class AIPlayer extends Player{
+            - strategy : AiStrategy
+        }
+        interface AiStrategy{
 
         }
         Game --o GameRules
@@ -69,6 +77,7 @@
         Game --* "2..4" Player
         Player --o Team
         Player --* Hand
+        AIPlayer --* AiStrategy
         Deck --o Card
         Table --o Card
         Hand --o Card
