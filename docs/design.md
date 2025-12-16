@@ -31,27 +31,33 @@ The project follows the **MVC (Model–View–Controller)** architectural patter
 ## Flow of Actions
 The user start a new game selecting the number of players
 A deck must be initialized
+2 teams must be initialized
 Player must be inizialited
 AIPlayer must be initialized
+Each player must be assigned to a team
 The Game deal the first hand to the players
 TURN:
-- The order of play must be decided
-    - The order of play may be the order of the players list
-    - So the deck must be initialized with the list in order
-- game ask first player wich card should he play
-- first player decides
-    - if he is human must wait for the input
-- game add this card to table
-    - table must be a map, so that there is a record of whom played what
-- all player plays
-- The table must be resolved by the game
-    - player list order is updated: winning player is the first for next turn
-    - winning player gets the card in his pile
-- game give each player a card in the list order
-- game clear the table
+- [ ] The order of play must be decided
+    - [ ] The order of play may be the order of the players list
+    - [ ] So the deck must be initialized with the list in order
+- [ ] game ask first player wich card should he play
+- [ ] first player decides
+    - [ ]  if he is human must wait for the input
+- [ ]  game add this card to table
+    - [ ]  table must be a HashMap, so that there is a record of whom played what and of the playing order 
+- [ ]  all player plays
+- [ ]  The table must be resolved by the game
+    - [ ]  player list order is updated: winning player is the first for next turn
+    - [ ]  winning player gets the card in his pile
+- [ ]  game give each player a card in the list order
+- [ ]  game clear the table
 WHEN deck is empty and hands are empty game finish
 
-- How to keep the score?
-    - each player has a pile with all the cards he won
-    - at endgame the game compute each player score
-- How to manage teams?
+- [ ]  How to keep the score?
+    - [ ]  each player has a pile with all the cards he won
+    - [ ]  at endgame the game compute each player score
+- [ ]  How to manage teams?
+    - [ ] add team class
+        - [ ] Must be hashable
+    - [ ] each player has a team
+    - [ ] when he wins a table he puts his card in his teams pile

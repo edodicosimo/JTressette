@@ -16,21 +16,25 @@
             
         }
         interface GameRules{
-
+            + solveTable(table : Table) : Player
+            + computeScore(List<Card>) : int
         }
         class TresetteRules implements GameRules{
-
         }
         class Game{
             - rules : GameRules
             - numberOfPlayers : int
             - players : List<Player>
+            - teams : Map<Team, List<Player>>
             - deck : Deck
             - table : Table
-            + dealCard(deck: Deck, player: Player) : void
+            + dealCard(player: Player) : void
             + askPlayerForCard(player : Player) : Card
             + addCardToTable(table : Table, card : Card) : void
-            + solveTable(table : Table)
+            + solveTable(table : Table) : void
+            + addCardsToPlayerPile(table : Table, player : player) : void
+            + updatePlayerOrder(player : Player) : void
+            + computeScore(team : Team) : int
         }
 
         class Hand{
@@ -38,14 +42,19 @@
         }
         class Table{
             - cards : Map<Player,Card>
-            + addCard(card : Card)
+            + addCard(card : Card, player : Player)
             + clear() : void
+        }
+        class Team{
+            - pile : List<Card>
         }
         abstract Player{
             - hand : Hand
-            - pile : List<Card>
+            - team : Team
             + receiveCard(card : Card) : void
             + playCard() : Card
+            + getTeam() : Team
+            + addCardsToTeamPile(card : Card...) : void
         }
         class HumanPlayer extends Player{
             
@@ -53,9 +62,12 @@
         class AIPlayer extends Player{
 
         }
+        Game --o GameRules
+        Game --* Team
         Game --* Deck
         Game --* Table
         Game --* "2..4" Player
+        Player --o Team
         Player --* Hand
         Deck --o Card
         Table --o Card
