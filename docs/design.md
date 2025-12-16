@@ -40,7 +40,7 @@ The Game deal the first hand to the players
 #### Phase: Turn
 - [ ] The order of play must be decided
     - [ ] The order of play may be the order of the players list
-    - [ ] So the deck must be initialized with the list in order
+    - [ ] So the game  must be initialized with the player list in order
 - [ ] game ask first player which card he plays
 - [ ] first player decides
     - [ ]  if he is human must wait for the input (**Phase: Wait for human play**)

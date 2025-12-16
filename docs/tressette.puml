@@ -18,7 +18,7 @@
         interface GameRules{
             + solveTable(table : Table) : Player
             + computeScore(List<Card>) : int
-            + moveIsLegal(table : Table, cardPlayed : card)
+            + moveIsLegal(table : Table, cardPlayed : Card, player : Player)
         }
         class TresetteRules implements GameRules{
         }
@@ -26,7 +26,7 @@
             - rules : GameRules
             - numberOfPlayers : int
             - players : List<Player>
-            - teams : LinkedHashMap<Team, List<Player>>
+            - teams : Map<Team, List<Player>>
             - deck : Deck
             - table : Table
             - currentPlayer : int
@@ -36,10 +36,10 @@
             + askPlayerForCard(player : Player) : Card
             + addCardToTable(card : Card) : void
             + solveTable(table : Table) : void
-            + addCardsToPlayerPile(table : Table, player : player) : void
+            + addCardsToPlayerPile(table : Table, player : Player) : void
             + updatePlayerOrder(player : Player) : void
             + computeScore(team : Team) : int
-            + computeWiningTeam() : Team
+            + computeWinningTeam() : Team
         }
         enum Phase{
             + INITIALIZATION
@@ -51,8 +51,8 @@
             - cards : List<Card>
         }
         class Table{
-            - cards : Map<Player,Card>
-            + addCard(card : Card, player : Player)
+            - cards : LinkedHashMap<Player,Card>
+            + addCard(card : Card, player : Player) : void 
             + clear() : void
         }
         class Team{
