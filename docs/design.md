@@ -67,3 +67,9 @@ The Game deal the first hand to the players
 #### Phase: EndGame
 WHEN deck is empty and hands are empty game finish
 Game count team's score
+
+#### How the human player can interact
+- Observer pattern:
+    - the controller subscribe to the view
+    - when the player plays a card the controller is notified by the view
+    - the controller handles the event and change the model

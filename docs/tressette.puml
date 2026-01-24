@@ -75,6 +75,13 @@
         interface AiStrategy{
 
         }
+        class UserProfile{
+            - nickname : String
+            - gamesPlayed : int
+            - wins : int
+            - losses : int
+        }
+
         Game --o GameRules
         Game --* Team
         Game --* Deck
@@ -91,9 +98,18 @@
         Card --> Rank
     }
     package controller{
-
+        class GameController{
+            - game : Game
+            - view : GameView
+            + startGame() : Game, Gameview
+        }
     }
     package view{
+        class GameView{
 
+        }
     }
+    GameController --* Game
+    GameController --* view.GameView
+    GameController --> model.UserProfile
 }
