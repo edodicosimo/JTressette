@@ -31,6 +31,7 @@
             - table : Table
             - currentPlayer : int
             - currentPhase : Phase
+            - observers : List<GameObserver>
             + dealCard(player: Player) : void
             + changePhase(phase : Phase) : void
             + askPlayerForCard(player : Player) : Card
@@ -39,7 +40,10 @@
             + addCardsToPlayerPile(table : Table, player : Player) : void
             + updatePlayerOrder(player : Player) : void
             + computeScore(team : Team) : int
-            + computeWinningTeam() : Team
+            + computeWinningTeam() : Team      
+            + addObserver(o : GameObserver) : void
+            + removeObserver(o : GameObserver) : void
+            + notifyObservers() : void
         }
         enum Phase{
             + INITIALIZATION
@@ -81,6 +85,9 @@
             - wins : int
             - losses : int
         }
+        interface GameObserver {
+            + onGameChanged(game : Game) : void
+        }
 
         Game --o GameRules
         Game --* Team
@@ -96,6 +103,7 @@
         Hand --o Card
         Card --> Suit
         Card --> Rank
+        GameObserver --o Game
     }
     package controller{
         class GameController{
@@ -105,7 +113,7 @@
         }
     }
     package view{
-        class GameView{
+        class GameView implements model.GameObserver{
 
         }
     }
